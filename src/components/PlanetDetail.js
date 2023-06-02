@@ -31,6 +31,12 @@ export const PlanetDetail = () => {
 
   return (
     <div className="planet-detail">
+      <nav className="navbar">
+        <Link to="/" className="home-link">
+          Home
+        </Link>
+      </nav>
+
       <h2>{planet.name}</h2>
       <p>Climate: {planet.climate}</p>
       <p>Terrain: {planet.terrain}</p>
@@ -40,7 +46,7 @@ export const PlanetDetail = () => {
       <p>Orbital Period: {planet.orbital_period}</p>
       <p>Rotation Period: {planet.rotation_period}</p>
       
-      <h3>Films</h3>
+      <h3>Films:</h3>
       <div className="films-grid">
         {planet.films.map((film, index) => (
           <Link to={`/movies/${extractIdFromUrl(film)}`} key={index} className="grid-item">
@@ -50,7 +56,7 @@ export const PlanetDetail = () => {
         ))}
       </div>
 
-      <h3>Residents</h3>
+      <h3>Residents:</h3>
       <div className="residents-grid">
         {planet.residents.map((resident, index) => (
           <Link to={`/actors/${extractIdFromUrl(resident)}`} key={index} className="grid-item">

@@ -1,3 +1,8 @@
+.body{
+  background-image: url('https://path/to/star-wars-background.jpg');
+  /* background-size: cover; */
+}
+
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
