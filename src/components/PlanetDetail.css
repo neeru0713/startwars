@@ -1,29 +1,23 @@
-.grid-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .films-grid,
-  .residents-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
-  }
-  
-  .grid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .grid-item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  
-  .grid-item span {
-    margin-top: 5px;
-  }
-  
+.films-grid,
+.residents-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.grid-item img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.grid-item span {
+  margin-top: 5px;
+}

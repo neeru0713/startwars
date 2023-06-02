@@ -40,27 +40,24 @@ export const PlanetDetail = () => {
       <p>Orbital Period: {planet.orbital_period}</p>
       <p>Rotation Period: {planet.rotation_period}</p>
       
-      <div className="grid-container">
-        <div className="films-grid">
-          <h3>Films</h3>
-          {planet.films.map((film, index) => (
-            <Link to={`/movies/${extractIdFromUrl(film)}`} key={index} className="grid-item">
-              <img src={`https://source.unsplash.com/80x80/?film,${index}`} alt="Film" />
-              
-            </Link>
-          ))}
-        </div>
+      <h3>Films</h3>
+      <div className="films-grid">
+        {planet.films.map((film, index) => (
+          <Link to={`/movies/${extractIdFromUrl(film)}`} key={index} className="grid-item">
+            <img src={`https://source.unsplash.com/80x80/?film,${index}`} alt="Film" />
+            
+          </Link>
+        ))}
+      </div>
 
-        <div className="residents-grid">
-          <h3>Residents</h3>
-          
-          {planet.residents.map((resident, index) => (
-            <Link to={`/actors/${extractIdFromUrl(resident)}`} key={index} className="grid-item">
-              <img src={`https://source.unsplash.com/80x80/?resident,${index}`} alt="Resident" />
-              
-            </Link>
-          ))}
-        </div>
+      <h3>Residents</h3>
+      <div className="residents-grid">
+        {planet.residents.map((resident, index) => (
+          <Link to={`/actors/${extractIdFromUrl(resident)}`} key={index} className="grid-item">
+            <img src={`https://source.unsplash.com/80x80/?resident,${index}`} alt="Resident" />
+            
+          </Link>
+        ))}
       </div>
     </div>
   );
