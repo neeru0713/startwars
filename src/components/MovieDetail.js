@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import '../App.css';
+import defaultImage from '../assets/defimg.jpg'
 
 export const MovieDetail = () => {
   const { id } = useParams();
@@ -44,7 +45,7 @@ export const MovieDetail = () => {
           return (
             <li key={index}>
               <Link to={`/actors/${characterId}`}>
-                <img src={`https://source.unsplash.com/80x80/?star,wars,${characterId}`} alt="Character" />
+                <img src={`https://starwars-visualguide.com/assets/img/characters/${characterId}.jpg`} alt="Character" />
               </Link>
             </li>
           );
@@ -57,7 +58,7 @@ export const MovieDetail = () => {
           return (
             <li key={index}>
               <Link to={`/planets/${planetId}`}>
-                <img src={`https://source.unsplash.com/80x80/?planet,${planetId}`} alt="Planet" />
+                <img src={`https://starwars-visualguide.com/assets/img/planets/${planetId}.jpg` || defaultImage} alt="Planet" />
               </Link>
             </li>
           );
@@ -66,4 +67,3 @@ export const MovieDetail = () => {
     </div>
   );
 };
-

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import './PlanetDetail.css';
 
 const extractIdFromUrl = (url) => {
-    const urlParts = url.split('/');
-    return urlParts[urlParts.length - 2];
-  };
-  
+  const urlParts = url.split('/');
+  return urlParts[urlParts.length - 2];
+};
 
 export const PlanetDetail = () => {
   const { id } = useParams();
@@ -31,38 +31,37 @@ export const PlanetDetail = () => {
 
   return (
     <div className="planet-detail">
-  <h2>{planet.name}</h2>
-  <p>Climate: {planet.climate}</p>
-  <p>Terrain: {planet.terrain}</p>
-  <p>Population: {planet.population}</p>
-  <p>Gravity: {planet.gravity}</p>
-  <p>Diameter: {planet.diameter}</p>
-  <p>Orbital Period: {planet.orbital_period}</p>
-  <p>Rotation Period: {planet.rotation_period}</p>
-  <h3>Films:</h3>
-  <ul>
-    {planet.films.map((film, index) => (
-      <li key={index}>
-        <Link to={`/movies/${extractIdFromUrl(film)}`}>
-          <img className="planet-image" src={`https://source.unsplash.com/80x80/?film,${index}`} alt="Film" />
-          {film}
-        </Link>
-      </li>
-    ))}
-  </ul>
-  <h3>Residents:</h3>
-  <ul>
-    {planet.residents.map((resident, index) => (
-      <li key={index}>
-        <Link to={`/actors/${extractIdFromUrl(resident)}`}>
-          <img className="planet-image" src={`https://source.unsplash.com/80x80/?resident,${index}`} alt="Resident" />
-          {resident}
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+      <h2>{planet.name}</h2>
+      <p>Climate: {planet.climate}</p>
+      <p>Terrain: {planet.terrain}</p>
+      <p>Population: {planet.population}</p>
+      <p>Gravity: {planet.gravity}</p>
+      <p>Diameter: {planet.diameter}</p>
+      <p>Orbital Period: {planet.orbital_period}</p>
+      <p>Rotation Period: {planet.rotation_period}</p>
+      
+      <div className="grid-container">
+        <div className="films-grid">
+          <h3>Films</h3>
+          {planet.films.map((film, index) => (
+            <Link to={`/movies/${extractIdFromUrl(film)}`} key={index} className="grid-item">
+              <img src={`https://source.unsplash.com/80x80/?film,${index}`} alt="Film" />
+              
+            </Link>
+          ))}
+        </div>
 
+        <div className="residents-grid">
+          <h3>Residents</h3>
+          
+          {planet.residents.map((resident, index) => (
+            <Link to={`/actors/${extractIdFromUrl(resident)}`} key={index} className="grid-item">
+              <img src={`https://source.unsplash.com/80x80/?resident,${index}`} alt="Resident" />
+              
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
-
