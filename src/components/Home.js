@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import defaultImage from '../assets/defimg.jpg';
 
 
-const Home = () => {
+export const Home = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -52,4 +52,3 @@ const Home = () => {
   );
 };
 
-export default Home;

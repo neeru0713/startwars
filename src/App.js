@@ -2,11 +2,11 @@
 import './App.css'
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Home from './components/Home';
-import MovieDetail from './components/MovieDetail';
-import ActorDetail from './components/ActorDetail';
-import StarshipDetail from './components/StarshipDetail';
-import PlanetDetail from './components/PlanetDetail';
+import {Home} from './components/Home';
+import {MovieDetail} from './components/MovieDetail';
+import {ActorDetail} from './components/ActorDetail';
+import {StarshipDetail} from './components/StarshipDetail';
+import {PlanetDetail} from './components/PlanetDetail';
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
           <Home/>
         </Route>
 
-        <Route exact path="/movies/:id"  >
+        <Route exact path="/movies/:id">
           <MovieDetail/>
         </Route>
 

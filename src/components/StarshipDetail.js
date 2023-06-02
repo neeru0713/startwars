@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
 const extractIdFromUrl = (url) => {
-    const urlParts = url.split('/');
-    return urlParts[urlParts.length - 2];
-  };
+const urlParts = url.split('/');
+return urlParts[urlParts.length - 2];
+};
   
-
-const StarshipDetail = () => {
+export const StarshipDetail = () => {
   const { id } = useParams();
   const [starship, setStarship] = useState(null);
 
@@ -67,4 +66,3 @@ const StarshipDetail = () => {
   );
 };
 
-export default StarshipDetail;

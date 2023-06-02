@@ -6,7 +6,7 @@ const extractIdFromUrl = (url) => {
     return urlParts[urlParts.length - 2];
   };
 
-const ActorDetail = () => {
+export const ActorDetail = () => {
   const { id } = useParams();
   const [actor, setActor] = useState(null);
 
@@ -51,4 +51,3 @@ const ActorDetail = () => {
   );
 };
 
-export default ActorDetail;

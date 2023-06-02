@@ -7,7 +7,7 @@ const extractIdFromUrl = (url) => {
   };
   
 
-const PlanetDetail = () => {
+export const PlanetDetail = () => {
   const { id } = useParams();
   const [planet, setPlanet] = useState(null);
 
@@ -66,4 +66,3 @@ const PlanetDetail = () => {
   );
 };
 
-export default PlanetDetail;

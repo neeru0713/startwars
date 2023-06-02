@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import '../App.css'
-const MovieDetail = () => {
+import '../App.css';
+
+export const MovieDetail = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -30,35 +31,39 @@ const MovieDetail = () => {
 
   return (
     <div className="movie-detail">
-        <h2>{movie.title}</h2>
-        <p>Episode: {movie.episode_id}</p>
-        <p>Director: {movie.director}</p>
-        <p>Release Date: {movie.release_date}</p>
-        <p>Opening Crawl:</p>
-        <p>{movie.opening_crawl}</p>
-        <h3>Characters:</h3>
-        <ul>
-            {movie.characters.map((character, index) => (
+      <h2>{movie.title}</h2>
+      <p>Episode: {movie.episode_id}</p>
+      <p>Director: {movie.director}</p>
+      <p>Release Date: {movie.release_date}</p>
+      <p>Opening Crawl:</p>
+      <p>{movie.opening_crawl}</p>
+      <h3>Characters:</h3>
+      <ul>
+        {movie.characters.map((character, index) => {
+          const characterId = extractIdFromUrl(character);
+          return (
             <li key={index}>
-                <Link to={`/actors/${extractIdFromUrl(character)}`}>
-                <img src="https://www.bollywoodhungama.com/wp-content/uploads/2019/11/Star-Wars-The-Rise-of-Skywalker-cast-feature-on-special-Entertainment-Weekly-covers-2.jpg" alt="Character" />
-                </Link>
+              <Link to={`/actors/${characterId}`}>
+                <img src={`https://source.unsplash.com/80x80/?star,wars,${characterId}`} alt="Character" />
+              </Link>
             </li>
-            ))}
-        </ul>
-        <h3>Planets:</h3>
-        <ul>
-            {movie.planets.map((planet, index) => (
+          );
+        })}
+      </ul>
+      <h3>Planets:</h3>
+      <ul>
+        {movie.planets.map((planet, index) => {
+          const planetId = extractIdFromUrl(planet);
+          return (
             <li key={index}>
-                <Link to={`/planets/${extractIdFromUrl(planet)}`}>
-                <img src="https://exoplanets.nasa.gov/internal_resources/116" alt="Planet" />
-                </Link>
+              <Link to={`/planets/${planetId}`}>
+                <img src={`https://source.unsplash.com/80x80/?planet,${planetId}`} alt="Planet" />
+              </Link>
             </li>
-            ))}
-        </ul>
+          );
+        })}
+      </ul>
     </div>
-
   );
 };
 
-export default MovieDetail;
