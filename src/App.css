@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-card {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 200px; /* Adjust the width of the movie card as needed */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-card a {
+  text-decoration: none;
+  color: #333;
 }
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.movie-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.movie-detail {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-detail h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.movie-detail p {
+  margin: 5px 0;
+}
+
+.movie-detail h3 {
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.movie-detail ul {
+  /* Existing styles for unordered lists */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  list-style: none;
+}
+
+.movie-detail li {
+  /* Existing styles for list items */
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.movie-detail li a {
+  /* Additional styles for character/planet links */
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+
+.movie-detail li img {
+  /* Additional styles for character/planet images */
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.actor-detail {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.actor-detail h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.actor-detail p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.actor-detail h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.actor-detail ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.actor-detail li {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.actor-detail li a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.actor-detail li a:hover {
+  text-decoration: underline;
+}
+
+.planet-detail {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.planet-detail h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.planet-detail p {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.planet-detail h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.planet-detail ul {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.planet-detail li {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.planet-detail li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.planet-detail li a:hover {
+  text-decoration: underline;
+}
+
+.planet-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
